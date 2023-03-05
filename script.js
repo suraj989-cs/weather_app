@@ -28,7 +28,6 @@ function weather_data() {
             document.getElementById("temp2").innerHTML = temp2;
             document.getElementById("wind_speed2").innerHTML = wind_speed2;
             document.getElementById("humidity2").innerHTML = humidity2;
-            console.log(temp2+"temp2");
         })
         .catch(err => console.error(err));
 
