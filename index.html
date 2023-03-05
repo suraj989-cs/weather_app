@@ -1,100 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    
-  </head>
 
-  <body>
-    <nav class="navbar navbar-light bg-dark justify-centent-between text-white shadow-lg py-3">
-      <a class="navbar-brand" style="font-size: xx-large;">Weather App</a>
-      <div class="form-check-inline">
-        <input
-          class="form-control mr-sm-2"
-          style="width: 300px;"
-          type="search"
-          id="cityname"
-          placeholder="Search for your city......"
-          aria-label="Search"
-        />
-        <button class="btn btn-danger" onclick="weather_data()">Search</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-dark justify-centent-between text-white shadow-lg py-3">
+    <a class="navbar-brand" style="font-size: xx-large;">Weather App</a>
+    <div class="form-check-inline">
+      <input class="form-control mr-sm-2" style="width: 300px;" type="search" id="cityname"
+        placeholder="Search for your city......" aria-label="Search" />
+      <button class="btn btn-danger" onclick="weather_data()">Search</button>
+    </div>
+  </nav>
+
+  <div class="container-xxl d-flex justify-content-center py-5">
+    <div class="row w-75">
+      <div class="col-4 d-flex justify-content-center mb-5">
+        <div class="card shadow" style="width: 80%; border-radius: 10px">
+          <img class="card-img-top"
+            src="https://images.unsplash.com/photo-1532764591304-d1f14225ccfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            alt="Card image cap" height="200px" style="border-top-right-radius: 10px; border-top-left-radius: 10px" />
+          <div class="card-body">
+            <h5 class="card-title">Temprature</h5>
+            <h2 class="card-text text-center text-primary" style="margin-top: -5px;"><span id="temp">23</span><span
+                class="text-muted fw-bold" style="font-weight: 600;">&#8451</span></h2>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Temperature: <span>&#177;</span> <span id="temp2">23</span><span
+                class="text-muted">&#8451</span></li>
+            <li class="list-group-item">Min Temperature: <span id="min_temp">23</span><span
+                class="text-muted">&#8451</span></li>
+            <li class="list-group-item" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Max
+              Temperature: <span id="max_temp">34</span><span class="text-muted">&#8451</span></li>
+          </ul>
+        </div>
       </div>
-    </nav>
 
-    <div class="container-xxl d-flex justify-content-center py-5">
-      <div class="row w-75">
-        <div class="col-4 d-flex justify-content-center mb-5">
-          <div class="card shadow" style="width: 80%; border-radius: 10px">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1532764591304-d1f14225ccfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Card image cap" height="200px" style="border-top-right-radius: 10px; border-top-left-radius: 10px" />
-            <div class="card-body">
-              <h5 class="card-title">Temprature</h5>
-              <h2 class="card-text text-center text-primary" style="margin-top: -5px;"><span id="temp">23</span><span class="text-muted fw-bold" style="font-weight: 600;">&#8451</span></h2>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Temperature: <span>&#177;</span> <span id="temp2">23</span><span class="text-muted">&#8451</span></li>
-              <li class="list-group-item">Min Temperature: <span id="min_temp">23</span><span class="text-muted">&#8451</span></li>
-              <li class="list-group-item" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Max Temperature: <span id="max_temp">34</span><span class="text-muted">&#8451</span></li>
-            </ul>
+      <div class="col-4 d-flex justify-content-center rounded-3 mb-5">
+        <div class="card shadow" style="width: 80%; border-radius: 10px">
+          <img class="card-img-top"
+            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSFgyNSjWWUCA0shJrCxReMnuXVtAQ31brI1LqRa_AAZ1Wz0srx"
+            alt="Card image cap" height="200px" style="border-top-right-radius: 10px; border-top-left-radius: 10px;" />
+          <div class="card-body">
+            <h5 class="card-title">Humidity</h5>
+            <h2 class="card-text text-center text-primary" style="margin-top: -5px;"><span id="humidity">23</span><span
+                class="text-muted">%</span> </h2>
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Humidity: <span>&#177; </span><span id="humidity2">23</span><span> %</span></li>
+            <li class="list-group-item">Sunrise: <span id="sunrise">23232323</span></li>
+            <li class="list-group-item" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+              Sunset: <span id="sunset">23232323</span></li>
+          </ul>
         </div>
-
-        <div class="col-4 d-flex justify-content-center rounded-3 mb-5">
-          <div class="card shadow" style="width: 80%; border-radius: 10px">
-            <img class="card-img-top" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSFgyNSjWWUCA0shJrCxReMnuXVtAQ31brI1LqRa_AAZ1Wz0srx" alt="Card image cap" height="200px" style="border-top-right-radius: 10px; border-top-left-radius: 10px;"/>
-            <div class="card-body">
-              <h5 class="card-title">Humidity</h5>
-              <h2 class="card-text text-center text-primary" style="margin-top: -5px;"><span id="humidity">23</span><span class="text-muted">%</span> </h2>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Humidity: <span>&#177; </span><span id="humidity2">23</span><span> %</span></li>
-              <li class="list-group-item">Sunrise: <span id="sunrise">23232323</span></li>
-              <li class="list-group-item"  style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Sunset: <span id="sunset">23232323</span></li>
-            </ul>
+      </div>
+      <div class="col-4 d-flex justify-content-center mb-5">
+        <div class="card shadow" style="width: 80%; border-radius: 10px">
+          <img class="card-img-top"
+            src="https://images.unsplash.com/photo-1614785246748-edc43ab91f76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnQlMjBsaWZlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="Card image cap" height="200px" style="border-top-right-radius: 10px; border-top-left-radius: 10px" />
+          <div class="card-body">
+            <h5 class="card-title">Wind</h5>
+            <h2 class="card-text text-center text-primary" style="margin-top: -5px;"><span
+                id="wind_speed">23</span><span class="text-muted">Km/h</span></h2>
           </div>
-        </div>
-        <div class="col-4 d-flex justify-content-center mb-5">
-          <div class="card shadow" style="width: 80%; border-radius: 10px">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1614785246748-edc43ab91f76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnQlMjBsaWZlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap" height="200px" style="border-top-right-radius: 10px; border-top-left-radius: 10px"/>
-            <div class="card-body">
-              <h5 class="card-title">Wind</h5>
-              <h2 class="card-text text-center text-primary" style="margin-top: -5px;"><span id="wind_speed">23</span><span class="text-muted">Km/h</span></h2>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Wind: <span>&#177;</span> <span id="wind_speed2">23 </span><span> km/h</span></li>
-              <li class="list-group-item">Wind Degrees: <span id="wind_degrees"></span>&deg;<span></span></li>
-              <li class="list-group-item" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Cloud pct: <span id="cloud_pct"></span> <span>PCT</span></li>
-            </ul>
-          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Wind: <span>&#177;</span> <span id="wind_speed2">23 </span><span> km/h</span>
+            </li>
+            <li class="list-group-item">Wind Degrees: <span id="wind_degrees"></span>&deg;<span></span></li>
+            <li class="list-group-item" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Cloud
+              pct: <span id="cloud_pct"></span> <span>PCT</span></li>
+          </ul>
         </div>
       </div>
     </div>
-  </body>
-  <script src="script.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"
-  ></script>
+  </div>
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </html>
 
 <style>
-
   @media screen and (max-width: 650px) {
     input {
       width: 250px !important;
     }
 
-    .row{
-      display: grid!important;
-      width: 100%!important;
+    .row {
+      display: grid !important;
+      width: 100% !important;
     }
 
-    .col-4{
-      max-width: 100%!important;
-    } 
+    .col-4 {
+      max-width: 100% !important;
+    }
   }
 </style>
